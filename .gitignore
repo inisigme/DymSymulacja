@@ -1,7 +1,7 @@
 # Nasze ignory
 DymSymulacja/x64/Debug
 x64/Debug
-DymSymulacja.VC.opendb
+# DymSymulacja.VC.opendb # to chyba jednak lepiej zachowac
 DymSymulacja.sdf
 .vs
 
