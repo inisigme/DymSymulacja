@@ -187,7 +187,7 @@ System2::System2()
 	
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D_ARRAY, texture);
-
+	ERR
 	const char *fileNames[6] =
 	{
 		"textures/test22.png",
