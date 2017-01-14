@@ -1,5 +1,9 @@
 # Nasze ignory
 DymSymulacja/x64/Debug
+DymSymulacja/Debug
+DymSymulacja/DymSymulacja.exe
+DymSymulacja/DymSymulacja.vcxproj
+DymSymulacja/DymSymulacja.vcxproj.filters
 x64/Debug
 # DymSymulacja.VC.opendb # to chyba jednak lepiej zachowac
 DymSymulacja.sdf
