@@ -1,3 +1,11 @@
+# Nasze ignory
+DymSymulacja/x64/Debug
+x64/Debug
+# DymSymulacja.VC.opendb # to chyba jednak lepiej zachowac
+DymSymulacja.sdf
+.vs
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
