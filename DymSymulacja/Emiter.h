@@ -26,9 +26,9 @@ public:
 class Emiter
 {
 public:
-	std::vector<Src> srcs;
-	int count;
-	GLfloat *pos;
+	std::vector<Src> srcs;			// dane zrodel
+	int count;															// ilosc czastek
+	GLfloat *pos;												// [x,y,z,numer_tekstury,...]
 	GLfloat *velocities;
 	struct Src *sources;
 	unsigned int sourcesCount;

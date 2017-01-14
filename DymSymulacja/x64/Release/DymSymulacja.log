@@ -7,10 +7,37 @@ Emiter.cpp(58): warning C4244: '=': conversion from 'double' to 'GLfloat', possi
 Emiter.cpp(59): warning C4018: '<': signed/unsigned mismatch
 Emiter.cpp(67): warning C4018: '<': signed/unsigned mismatch
 Emiter.cpp(100): warning C4018: '<': signed/unsigned mismatch
+  Krzyzyk.cpp
+  main.cpp
+  Program1.cpp
+  ShaderProgram.cpp
+  shaders.cpp
+  Skybox.cpp
+  Swiat.cpp
+  symulacja.cpp
+  system1.cpp
+  System2.cpp
+System2.cpp(22): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(34): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(37): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(49): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(52): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(64): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(67): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(79): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(82): warning C4305: '=': truncation from 'double' to 'GLfloat'
+  textures.cpp
+  Uklad.cpp
+  View.cpp
+  Window.cpp
+Window.cpp(127): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Window.cpp(128): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+Window.cpp(130): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  wszystko.cpp
   Generating code
-  25 of 386 functions ( 6.5%) were compiled, the rest were copied from previous compilation.
+  383 of 386 functions (99.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 Emiter.obj : warning LNK4049: locally defined symbol __glewUniform3f imported
 Emiter.obj : warning LNK4049: locally defined symbol __glewUniformMatrix4fv imported
@@ -42,6 +69,6 @@ Skybox.obj : warning LNK4049: locally defined symbol __glewGenerateMipmap import
 System2.obj : warning LNK4049: locally defined symbol __glewBlendEquation imported
 Window.obj : warning LNK4049: locally defined symbol glewInit imported
 Window.obj : warning LNK4049: locally defined symbol glewGetErrorString imported
-glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\Inisigme\documents\visual studio 2015\Projects\DymSymulacja\x64\Release\vc120.pdb'; linking object as if no debug info
-  DymSymulacja.vcxproj -> C:\Users\Inisigme\documents\visual studio 2015\Projects\DymSymulacja\x64\Release\DymSymulacja.exe
-  DymSymulacja.vcxproj -> C:\Users\Inisigme\documents\visual studio 2015\Projects\DymSymulacja\x64\Release\DymSymulacja.pdb (Full PDB)
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'D:\AGH - EAIIIB - INFORMATYKA\Dym-Cpp\x64\Release\vc120.pdb'; linking object as if no debug info
+  DymSymulacja.vcxproj -> D:\AGH - EAIIIB - INFORMATYKA\Dym-Cpp\x64\Release\DymSymulacja.exe
+  DymSymulacja.vcxproj -> D:\AGH - EAIIIB - INFORMATYKA\Dym-Cpp\x64\Release\DymSymulacja.pdb (Full PDB)

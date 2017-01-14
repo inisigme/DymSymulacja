@@ -266,7 +266,7 @@ void System2::render(glm::mat4x4 MVPMatrix, View *view)
 	glUniform1i(glGetUniformLocation(program, "tex"), 0);
 
 
-	for (int layer = 0; layer < 1; layer++)
+	for (int layer = 0; layer < 1; layer++) // rozmycie ruchu
 	{
 		std::ostringstream txt;
 		txt << "modelViewProjectionMatrix[" << layer << "]";
