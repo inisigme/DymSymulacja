@@ -1,0 +1,9 @@
+﻿  Window.cpp
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(5): error C2039: 'window': is not a member of 'View'
+  c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\view.h(4): note: see declaration of 'View'
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(6): error C2761: 'glm::mat4x4 View::view': member function redeclaration not allowed
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(78): warning C4060: switch statement contains no 'case' or 'default' labels
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(85): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(86): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(92): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\inisigme\documents\visual studio 2015\projects\dymsymulacja\dymsymulacja\window.cpp(93): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
