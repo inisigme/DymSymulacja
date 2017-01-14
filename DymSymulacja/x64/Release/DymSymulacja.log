@@ -1,16 +1,17 @@
-﻿  Emiter.cpp
-Emiter.cpp(8): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-Emiter.cpp(11): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-Emiter.cpp(15): warning C4244: 'return': conversion from 'double' to 'GLfloat', possible loss of data
-Emiter.cpp(38): warning C4018: '<': signed/unsigned mismatch
-Emiter.cpp(58): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-Emiter.cpp(59): warning C4018: '<': signed/unsigned mismatch
-Emiter.cpp(67): warning C4018: '<': signed/unsigned mismatch
-Emiter.cpp(100): warning C4018: '<': signed/unsigned mismatch
+﻿  System2.cpp
+System2.cpp(22): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(34): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(37): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(49): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(52): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(64): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(67): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(79): warning C4305: '=': truncation from 'double' to 'GLfloat'
+System2.cpp(82): warning C4305: '=': truncation from 'double' to 'GLfloat'
   Generating code
-  25 of 386 functions ( 6.5%) were compiled, the rest were copied from previous compilation.
+  24 of 386 functions ( 6.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 Emiter.obj : warning LNK4049: locally defined symbol __glewUniform3f imported
 Emiter.obj : warning LNK4049: locally defined symbol __glewUniformMatrix4fv imported

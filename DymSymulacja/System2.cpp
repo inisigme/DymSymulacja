@@ -190,11 +190,11 @@ System2::System2()
 	ERR
 	const char *fileNames[6] =
 	{
-		"textures/test22.png",
+		"textures/test22.png",	
 		"textures/test22.png",
 		"textures/test24.png",
 		"textures/test22.png",
-		"textures/test22.png",
+		"textures/test22.png",	
 		"textures/test24.png"
 	};
 	
