@@ -14,7 +14,7 @@ void main()
     if(dis < 1.5)
         discard;
     else
-    outColor = vec4(kolorDymu*dis,alpha);
+    outColor = vec4(kolorDymu*dis,alpha*dis);
 
 //  outColor = vec4(color.w * vec4(kolorDymu,1.0));;
 }

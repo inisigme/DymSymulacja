@@ -2,13 +2,13 @@
 #define FRAME_LAYERS 1
 #define MAX_VERTICES 4
 
-
 layout( points, invocations = 1 ) in;
 layout( triangle_strip, max_vertices = MAX_VERTICES ) out;
 
 uniform mat4 modelViewProjectionMatrix[FRAME_LAYERS];
 uniform float pointSize;
 uniform mat4x3 offsets;
+
 
 vec2 texCoords[MAX_VERTICES] = vec2[MAX_VERTICES]
 (

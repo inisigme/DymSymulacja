@@ -21,12 +21,11 @@ public:
 		TEX_COORD,
 		VERTEX_BUFFER_SIZE
 	};
-
 	GLuint asdf;
 	GLuint frameBuffer;
 	const int FRAME_WIDTH = 1200;
 	const int FRAME_HEIGHT = 800;
-	int frame_layers = 1;
+	int frame_layers = 1; // DO ROZMUCIA RUCHU
 	GLuint color0, depth, fbo;
 	glm::mat4x4 modelViewMatrix[1];
 	enum
@@ -47,7 +46,7 @@ public:
 	GLuint indicesBuffer;
 	GLuint vertexArray;
 	GLuint texture;
-	System2();
+	System2(Src *);
 	void render(glm::mat4x4 MVPMatrix, View *view);
 	~System2();
 };

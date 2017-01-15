@@ -17,10 +17,10 @@ View::~View()
 void View::stepFoward() {
 	glm::vec3 wersor = glm::normalize(centers - eyes);
 	wersor *= distance;
-	GLfloat y = eyes.y;
+//	GLfloat y = eyes.y;
 	eyes += wersor;
 	centers += wersor;
-	eyes.y = y;
+//	eyes.y = y;
 	view = glm::lookAt(eyes, centers, up);
 	MVPMatrix = projection * view;
 }

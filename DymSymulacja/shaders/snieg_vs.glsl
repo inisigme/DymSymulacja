@@ -20,32 +20,32 @@ uniform mat4 modelViewProjectionMatrix;
 uniform float pointSize;
 
 //////////////////////////////////////////////////////////////////////
-// numery indeksów poszczególnych atrybutów wierzcho³ków
+// numery indeks?w poszczeg?lnych atrybut?w wierzcho?k?w
 //////////////////////////////////////////////////////////////////////
 #define POSITION  0
 
 //////////////////////////////////////////////////////////////////////
-// wspó³rzêdne wierzcho³ka i numer p³atka œniegu
+// wsp??rz?dne wierzcho?ka i numer p?atka ?niegu
 //////////////////////////////////////////////////////////////////////
 layout( location = POSITION ) in vec4 inPosition;
 
 //////////////////////////////////////////////////////////////////////
-// numer tekstury p³atka œniegu
+// numer tekstury p?atka ?niegu
 //////////////////////////////////////////////////////////////////////
 flat out float snowFlake;
 
 //////////////////////////////////////////////////////////////////////
-// program g³ówny
+// program g??wny
 //////////////////////////////////////////////////////////////////////
 void main()
 {
-    // standardowe przekszta³cenie wierzcho³ków
+    // standardowe przekszta?cenie wierzcho?k?w
     gl_Position = modelViewProjectionMatrix * vec4( inPosition.xyz, 1.0 );
 
-    // numer tekstury p³atka œniegu
+    // numer tekstury p?atka ?niegu
     snowFlake = inPosition.w;
 
-    // wielkoœæ punktu modulowana przez wartoœæ
-    // trzeciej wspó³rzêdnej jego po³o¿enia
+    // wielko?? punktu modulowana przez warto??
+    // trzeciej wsp??rz?dnej jego po?o?enia
     gl_PointSize = 70.0;
 }

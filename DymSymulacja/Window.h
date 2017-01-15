@@ -7,6 +7,8 @@
 #include "ShaderProgram.h"
 #include "System2.h"
 #include "Skybox.h"
+#include "Emiter.h"
+#include <qstring.h>
 #pragma once
 
 class Window
@@ -29,7 +31,7 @@ public:
 	static void Resize(GLFWwindow * window, int w, int h);
 	static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-	Window();
+	Window(Src *);
 	~Window();
 };
 

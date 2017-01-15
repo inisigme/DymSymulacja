@@ -9,7 +9,7 @@ system1 *Window::p2;
  ShaderProgram * Window::sh;
  System2 *Window::s2;
  Skybox *Window::sky;
-Window::Window()
+Window::Window(Src *s)
 {
 	
 	glfwSetErrorCallback(error_callback);
@@ -53,7 +53,7 @@ Window::Window()
 //	p2 = new system1();
 //	u = new Uklad();
 //	sky = new Skybox();
-s2 = new System2();
+s2 = new System2(s);
 //	k = new Krzyzyk();
 //	sh = new ShaderProgram();
 	for (GLenum err; (err = glGetError()) != GL_NO_ERROR;)
@@ -61,8 +61,6 @@ s2 = new System2();
 		std::cout << "po konstruktorze    " << err << std::endl;
 	}
 	//glDisable(GL_BLEND);
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_TEXTURE_2D);
 	glEnable(GL_TEXTURE_CUBE_MAP);
 	glfwSetTime(0.0);
 	mainLoop();

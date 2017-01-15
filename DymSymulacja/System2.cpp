@@ -3,86 +3,89 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <sstream>
 
-System2::System2()
+System2::System2(Src *_s)
 {
 	ERR
-	std::vector <Src> vec;
-	Src *s = new Src;
-	s->maxH = 20.f;
-	s->range = 2.f;
-	s->start = 0;
-	s->end = 400;
-	s->startPos =	glm::vec3(10.f, 0.f, 10.f);
-	s->wind = glm::vec3(0.00, 0.0, 0.0);
-	s->gravity = 5.1f;
-	s->smokeColor = glm::vec3(2.3, 2.3f,2.3);
-	s->particleSize = 1;
-	s->startVelocity = glm::vec3(0.0, 4, 0.0);
-	s->startVelocityRange = glm::vec3(0.01,0.0,0.01);
-	s->alpha = 0.005;
-	vec.push_back(*s);
+		/*std::vector <Src> vec;
+		Src *s = new Src;
+		s->maxH = 20.f;
+		s->range = 2.f;
+		s->start = 0;
+		s->end = 400;
+		s->startPos =	glm::vec3(10.f, 0.f, 10.f);
+		s->wind = glm::vec3(0.00, 0.0, 0.0);
+		s->gravity = 5.1f;
+		s->smokeColor = glm::vec3(2.3, 2.3f,2.3);
+		s->particleSize = 1;
+		s->startVelocity = glm::vec3(0.0, 4, 0.0);
+		s->startVelocityRange = glm::vec3(0.01,0.0,0.01);
+		s->alpha = 0.005;
+		vec.push_back(*s);
 
-	Src *s4 = new Src;
-	s4->maxH = 10.f;
-	s4->range = 2.f;
-	s4->start = 401;
-	s4->end = 999;
-	s4->startPos = glm::vec3(50.f, 0.f, 50.f);
-	s4->wind = glm::vec3(8.00, 0.0,8.0);
-	s4->gravity = 5.1f;
-	s4->smokeColor = glm::vec3(0.05, 0.5f, 0.5);
-	s4->particleSize = 1.4;
-	s4->startVelocity = glm::vec3(3.0, 4, 3.0);
-	s4->startVelocityRange = glm::vec3(12.01, 0.0, 12.01);
-	s4->alpha = 0.01;
-	vec.push_back(*s4);
+		Src *s4 = new Src;
+		s4->maxH = 10.f;
+		s4->range = 2.f;
+		s4->start = 401;
+		s4->end = 999;
+		s4->startPos = glm::vec3(50.f, 0.f, 50.f);
+		s4->wind = glm::vec3(8.00, 0.0,8.0);
+		s4->gravity = 5.1f;
+		s4->smokeColor = glm::vec3(0.05, 0.5f, 0.5);
+		s4->particleSize = 1.4;
+		s4->startVelocity = glm::vec3(3.0, 4, 3.0);
+		s4->startVelocityRange = glm::vec3(12.01, 0.0, 12.01);
+		s4->alpha = 0.01;
+		vec.push_back(*s4);
 
-	Src *s2 = new Src;
-	s2->maxH = 50.f;
-	s2->range = 6.f;
-	s2->start = 1000;
-	s2->end = 1999;
-	s2->startPos = glm::vec3(20.f, 0.f, 20.f);
-	s2->wind = glm::vec3(1.00, 0.0, 0.0);
-	s2->gravity = 5.1f;
-	s2->smokeColor = glm::vec3(1.0,0.f, 0.0);
-	s2->particleSize = 1.9;
-	s2->startVelocity = glm::vec3(0.0, 4, 0.0);
-	s2->startVelocityRange = glm::vec3(8.01, 10.0, 8.01);
-	s2->alpha = 0.018;
-	vec.push_back(*s2);
+		Src *s2 = new Src;
+		s2->maxH = 50.f;
+		s2->range = 6.f;
+		s2->start = 1000;
+		s2->end = 1999;
+		s2->startPos = glm::vec3(20.f, 0.f, 20.f);
+		s2->wind = glm::vec3(1.00, 0.0, 0.0);
+		s2->gravity = 5.1f;
+		s2->smokeColor = glm::vec3(1.0,0.f, 0.0);
+		s2->particleSize = 1.9;
+		s2->startVelocity = glm::vec3(0.0, 4, 0.0);
+		s2->startVelocityRange = glm::vec3(8.01, 10.0, 8.01);
+		s2->alpha = 0.018;
+		vec.push_back(*s2);
 
-	Src *s3 = new Src;
-	s3->maxH = 30.f;
-	s3->range = 0.f;
-	s3->start = 2000;
-	s3->end = 2999;
-	s3->startPos = glm::vec3(40.f, 0.f, 40.f);
-	s3->wind = glm::vec3(5.00, 0.0, 0.0);
-	s3->gravity = 5.1f;
-	s3->smokeColor = glm::vec3(1.0, 0.5f, 0.0);
-	s3->particleSize = 1.3;
-	s3->startVelocity = glm::vec3(0.0, 4, 0.0);
-	s3->startVelocityRange = glm::vec3(8.01, 0.0, 8.01);
-	s3->alpha = 0.003;
-	vec.push_back(*s3);
+		Src *s3 = new Src;
+		s3->maxH = 30.f;
+		s3->range = 0.f;
+		s3->start = 2000;
+		s3->end = 2999;
+		s3->startPos = glm::vec3(40.f, 0.f, 40.f);
+		s3->wind = glm::vec3(5.00, 0.0, 0.0);
+		s3->gravity = 5.1f;
+		s3->smokeColor = glm::vec3(1.0, 0.5f, 0.0);
+		s3->particleSize = 1.3;
+		s3->startVelocity = glm::vec3(0.0, 4, 0.0);
+		s3->startVelocityRange = glm::vec3(8.01, 0.0, 8.01);
+		s3->alpha = 0.003;
+		vec.push_back(*s3);
 
-	Src *s5 = new Src;
-	s5->maxH = 20.f;
-	s5->range = 2.f;
-	s5->start = 3000;
-	s5->end = 3499;
-	s5->startPos = glm::vec3(00.f, 0.f, 10.f);
-	s5->wind = glm::vec3(0.00, 0.0, 0.0);
-	s5->gravity = 5.1f;
-	s5->smokeColor = glm::vec3(0.15, 1.0f, 0.1);
-	s5->particleSize = 1.2;
-	s5->startVelocity = glm::vec3(0.0, 14, 0.0);
-	s5->startVelocityRange = glm::vec3(10.01, 0.0, 10.01);
-	s5->alpha = 0.005;
-	vec.push_back(*s5);
+		Src *s5 = new Src;
+		s5->maxH = 20.f;
+		s5->range = 2.f;
+		s5->start = 3000;
+		s5->end = 3499;
+		s5->startPos = glm::vec3(00.f, 0.f, 10.f);
+		s5->wind = glm::vec3(0.00, 0.0, 0.0);
+		s5->gravity = 5.1f;
+		s5->smokeColor = glm::vec3(0.15, 1.0f, 0.1);
+		s5->particleSize = 1.2;
+		s5->startVelocity = glm::vec3(0.0, 14, 0.0);
+		s5->startVelocityRange = glm::vec3(10.01, 0.0, 10.01);
+		s5->alpha = 0.005;
+		vec.push_back(*s5);*/
 
-	this->e = new Emiter(vec, 3500, 5);
+
+		std::vector<Src *> vec;
+	vec.push_back(_s);
+	this->e = new Emiter(vec, _s->end+1, 1);
 	this->sky = new Skybox();
 	this->s = new Swiat();
 	glGenTextures(1, &texture23);
@@ -234,25 +237,24 @@ void System2::render(glm::mat4x4 MVPMatrix, View *view)
 	
 	modelViewMatrix[0] = MVPMatrix;
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo);
+	glClearColor(0.0, 1.0, 0.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	ERR
 		/*glBindFramebuffer(GL_DRAW_FRAMEBUFFER, frameBuffer);
-			glClearColor(0.0, 0.0, 0.0, 1.0);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-			u->render(MVPMatrix);*/
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			u->render(MVPMatrix);
 		ERR
 		glDisable(GL_BLEND);
-	glEnable(GL_DEPTH_TEST);
-	s->render(MVPMatrix);
-	sky->render(MVPMatrix);
-		glEnable(GL_BLEND);
-		glDisable(GL_DEPTH_TEST);
-	//glBlendFunc(GL_SRC_ALPHA, GL_ONE);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		//glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-		glBlendEquation(GL_FUNC_ADD);
+	glEnable(GL_DEPTH_TEST);*/
+	sky->render(MVPMatrix,frame_layers);
+	s->render(MVPMatrix, frame_layers);
+
+	
+	glEnable(GL_BLEND);
 	glDisable(GL_DEPTH_TEST);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendEquation(GL_FUNC_ADD);
 	
 	e->update((GLfloat)glfwGetTime());
 	ERR
@@ -273,7 +275,7 @@ void System2::render(glm::mat4x4 MVPMatrix, View *view)
 		glm::mat4x4 modelViewProjectionMatrix = modelViewMatrix[layer];
 		glUniformMatrix4fv(glGetUniformLocation(program, txt.str().c_str()), 1, GL_FALSE, glm::value_ptr(modelViewProjectionMatrix));
 	}
-	e->draw(MVPMatrix, view, program);
+	e->draw(MVPMatrix, view, program,frame_layers);
 	
 	
 	
@@ -305,10 +307,10 @@ void System2::render(glm::mat4x4 MVPMatrix, View *view)
 	ERR
 		glUniformMatrix4fv(glGetUniformLocation(prostokat, "modelViewProjectionMatrix"), 1, GL_FALSE, glm::value_ptr(p));
 	ERR
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);*/
 	ERR	
 		glUseProgram(0);
-	glBindVertexArray(0);*/
+	glBindVertexArray(0);
 
 	glClearColor(0.0, 0.0, 0.0, 0.0);
 
@@ -321,7 +323,7 @@ void System2::render(glm::mat4x4 MVPMatrix, View *view)
 	glBindVertexArray(vertexArrayR);
 
 	glUseProgram(prostokat);
-
+	glDisable(GL_BLEND);
 	glUniform1i(glGetUniformLocation(prostokat, "tex"),0);
 
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);

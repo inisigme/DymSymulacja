@@ -1,9 +1,9 @@
 #version 410
-#define FRAME_LAYERS 8
+#define FRAME_LAYERS 1
 #define MAX_VERTICES 3
 
 
-layout( triangles  , invocations = 8 ) in;
+layout( triangles  , invocations = 1 ) in;
 layout( triangle_strip , max_vertices = MAX_VERTICES ) out;
 
 uniform mat4 modelViewProjectionMatrix;

@@ -22,7 +22,7 @@ public:GLfloat position[3*4] =
 		   1, 1,
 	   };
 
-	   void render(glm::mat4x4);
+	   void render(glm::mat4x4, GLuint);
 	   Swiat();
 	   ~Swiat();
 };

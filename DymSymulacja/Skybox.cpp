@@ -81,9 +81,10 @@ Skybox::~Skybox()
 {
 }
 
-void Skybox::render(glm::mat4x4 MVP) {
-	glBindTexture(GL_TEXTURE_CUBE_MAP, texture);	
+void Skybox::render(glm::mat4x4 MVP,GLuint frame_layers) {
+	glActiveTexture(GL_TEXTURE0);
 	glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, texture);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
@@ -93,7 +94,7 @@ void Skybox::render(glm::mat4x4 MVP) {
 	glBindVertexArray(vertexArray);
 	glUseProgram(program);
 	glUniformMatrix4fv(glGetUniformLocation(program, "modelViewProjectionMatrix"), 1, GL_FALSE, glm::value_ptr(MVP));
-	glUniform1i(glGetUniformLocation(program, "tex"), 2);
+	glUniform1i(glGetUniformLocation(program, "tex"),1);
 	glDrawElements(GL_TRIANGLES, 12 * 3, GL_UNSIGNED_INT, NULL);
 	glUseProgram(0);
 	glBindVertexArray(0);
