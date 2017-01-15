@@ -4,7 +4,7 @@ DymSymulacja/Debug
 DymSymulacja/DymSymulacja.exe
 DymSymulacja/DymSymulacja.vcxproj
 DymSymulacja/DymSymulacja.vcxproj.filters
-x64/Debug
+x64
 # DymSymulacja.VC.opendb # to chyba jednak lepiej zachowac
 DymSymulacja.sdf
 .vs
