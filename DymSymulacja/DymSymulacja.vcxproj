@@ -138,6 +138,24 @@
       <IgnoreSpecificDefaultLibraries>libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)FreeImage.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)libGLESv2.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)libGLESv2d.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Core.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Gui.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Widgets.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qwindows.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qwindowsd.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)blender1.obj" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qt.conf" "$(TargetDir)"
+mkdir "$(TargetDir)plugins"
+mkdir "$(TargetDir)shaders"
+mkdir "$(TargetDir)textures"
+xcopy /y /s "$(ProjectDir)plugins" "$(TargetDir)plugins"
+xcopy /y /s "$(ProjectDir)shaders" "$(TargetDir)shaders"
+xcopy /y /s "$(ProjectDir)textures" "$(TargetDir)textures"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -160,6 +178,24 @@
       <IgnoreSpecificDefaultLibraries>libcmtd.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(ProjectDir)FreeImage.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)libGLESv2.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)libGLESv2d.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Core.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Gui.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)Qt5Widgets.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qwindows.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qwindowsd.dll" "$(TargetDir)"
+xcopy /y "$(ProjectDir)blender1.obj" "$(TargetDir)"
+xcopy /y "$(ProjectDir)qt.conf" "$(TargetDir)"
+mkdir "$(TargetDir)plugins"
+mkdir "$(TargetDir)shaders"
+mkdir "$(TargetDir)textures"
+xcopy /y /s "$(ProjectDir)plugins" "$(TargetDir)plugins"
+xcopy /y /s "$(ProjectDir)shaders" "$(TargetDir)shaders"
+xcopy /y /s "$(ProjectDir)textures" "$(TargetDir)textures"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Emiter.cpp" />
