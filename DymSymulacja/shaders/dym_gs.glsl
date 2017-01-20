@@ -27,7 +27,7 @@ void main()
     // generowanie wierzcho�k�w
     for( int v = 0; v < MAX_VERTICES; v++ )
     {
-        gl_Position = modelViewProjectionMatrix[gl_InvocationID] * (vec4( inoutPosition[0].xyz + offsets[v]*pointSize,1) );
+        gl_Position = modelViewProjectionMatrix[gl_InvocationID] * ( vec4(inoutPosition[0].xyz + (1+ ( abs(inoutPosition[0].y - 5))/ 25) *offsets[v]*pointSize,1) );
         gl_ViewportIndex = 1;
         texCoord = texCoords[v];
         snowFlake = inoutPosition[0].w;

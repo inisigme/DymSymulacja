@@ -4,14 +4,15 @@
 // zwezajacy sie
 inline GLfloat Emiter::noise1x(unsigned int i, unsigned int j, GLfloat dTime) {
 	//return 0.01f*sin(pos[j * 4 + 1]) + 0.1f* (srcs[i].startPos.x -pos[j*4 + 0] + pos[j * 4 + 1]);
-	return rand() / (float)RAND_MAX / 10.0f - 0.05;// +(srcs[i]->startPos.x - pos[j * 4 + 0]) / 400.f;
+	return rand() / (float)RAND_MAX / 50.0f - 0.01;// +(srcs[i]->startPos.x - pos[j * 4 + 0]) / 400.f;
 }
 inline GLfloat Emiter::noise1y(unsigned int i, unsigned int j, GLfloat dTime) {
-	return rand() / (float)RAND_MAX / 100.f - 0.002;
+//	return rand() / (float)RAND_MAX / 100.f - 0.002;
+	return 0;
 }
 inline GLfloat Emiter::noise1z(unsigned int i, unsigned int j, GLfloat dTime) {
 	//	return 0.01f*sin(pos[j * 4 + 1]) + 0.1f* (srcs[i].startPos.z - pos[j * 4 + 2]+pos[j*4+1]);
-	return rand() / (float)RAND_MAX / 10.f - 0.05;// +(srcs[i]->startPos.x - pos[j * 4 + 2]) / 400.f;
+	return rand() / (float)RAND_MAX / 50.f - 0.01;// +(srcs[i]->startPos.x - pos[j * 4 + 2]) / 400.f;
 }
 
 

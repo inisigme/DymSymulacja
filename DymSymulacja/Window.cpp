@@ -74,9 +74,11 @@ void Window::mainLoop() {
 	
 	}
 }
+
 void Window::renderScene() {
-	static int a = 0;
-	std::cout << a++  << "      " << glfwGetTime() << std::endl;
+	printFPS(glfwGetTime());
+	//static int a = 0;
+	//std::cout << a++  << "      " << glfwGetTime() << std::endl;
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	//std::cout << this->view->eyes.x << "      " << this->view->eyes.y << "     " << this->view->eyes.z << "__________" <<

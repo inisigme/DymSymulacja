@@ -11,10 +11,10 @@ void main()
     vec4 color = texture( tex, vec3( texCoord, snowFlake ) );
 
    float dis = length(color.xyz);
-    if(dis < 1.5)
+   if(dis < 0.5)
         discard;
     else
-    outColor = vec4(kolorDymu*dis,alpha*dis);
+    outColor = vec4(kolorDymu,alpha*dis);
 
-//  outColor = vec4(color.w * vec4(kolorDymu,1.0));;
+    //  outColor = vec4(color.w * vec4(kolorDymu,1.0));;
 }

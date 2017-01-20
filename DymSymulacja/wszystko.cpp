@@ -24,3 +24,15 @@ void blad(std::string f, int l) {
 		getchar();
 	}
 }
+
+void printFPS(double time) {
+	static double lastTime = 0;
+	static unsigned int a = 0;
+	if (time - lastTime > 1.0) {
+		std::cout << "FPS -> " << a << std::endl;
+		a = 0;
+		lastTime = time;
+	}
+	else
+		a++;
+}

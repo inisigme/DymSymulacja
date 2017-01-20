@@ -7,7 +7,7 @@ Swiat::Swiat()
 	glGenTextures(1, &texture);
 	glBindTexture(GL_TEXTURE_2D, texture);
 
-	if (!LoadTexture("textures/FullMoonRight2048.png", GL_TEXTURE_2D))
+	if (!LoadTexture("textures/blackWall.jpg", GL_TEXTURE_2D))
 	{
 
 		exit(0);
@@ -35,7 +35,7 @@ Swiat::Swiat()
 	glAttachShader(program, LoadShader(GL_FRAGMENT_SHADER, "shaders/swiat_fs.glsl"));
 	LinkValidateProgram(program);
 
-	vertexArray = parsowanie("blender1.obj");
+	vertexArray = parsowanie("trzySciany.obj");
 	
 
 
@@ -54,8 +54,8 @@ void Swiat::render(glm::mat4x4 MVP, GLuint frame_layers) {
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	ERR
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glBindVertexArray(vertexArray);
 	glUseProgram(program);
 	glUniformMatrix4fv(glGetUniformLocation(program, "modelViewProjectionMatrix"), 1, GL_FALSE, glm::value_ptr(MVP));

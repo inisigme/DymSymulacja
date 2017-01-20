@@ -6,10 +6,22 @@ MainWindow::MainWindow(Src *s)
 	mainLayout = new QGridLayout;
 	przeladuj = new QPushButton;
 
+	this->setStyleSheet("color: white; \
+		background-color: black;");
 
+		
 	przeladuj->setText("Dodaj kolejny warunek");
 	tablica = new QTextEdit[40];
 	podpisy = new QLabel[40];
+	for (unsigned int i = 0; i < 40; i++) {
+		tablica[i].setFixedSize(60, 25);
+		tablica[i].setStyleSheet("border-left: 1px solid black; \
+		border-right: 1px solid black;\
+		border-top: 1px solid black;\
+		border-bottom: 1px solid white");
+	}
+	for (unsigned int i = 0; i < 40; i++)
+		podpisy[i].setFixedSize(90, 25);
 	this->s = s;
 	podpisy[0].setText("start");
 	mainLayout->addWidget(&podpisy[0], 0, 0);
@@ -76,19 +88,21 @@ MainWindow::MainWindow(Src *s)
 	mainLayout->addWidget(&tablica[23], 12, 2);
 	mainLayout->addWidget(&tablica[24], 12, 3);
 
-	podpisy[13].setText("temperature");
+	podpisy[13].setText("temperature(air)");
 	mainLayout->addWidget(&podpisy[13], 13, 0);
 	mainLayout->addWidget(&tablica[25], 13, 1);
-
-	podpisy[14].setText("mass");
+	
+	podpisy[14].setText("temperature");
 	mainLayout->addWidget(&podpisy[14], 14, 0);
 	mainLayout->addWidget(&tablica[26], 14, 1);
+
+	podpisy[15].setText("mass");
+	mainLayout->addWidget(&podpisy[15], 15, 0);
+	mainLayout->addWidget(&tablica[27], 15, 1);
 	wyswietl();
 	setLayout(mainLayout);
 	
 
-	//connect(przeladuj, SIGNAL(clicked()), this, SLOT(przeladujFun()));
-	//QObject::connect(przeladuj, SIGNAL(clicked()), this, SLOT(przeladujFun()));
 	void update();
 }
 
@@ -125,8 +139,9 @@ void MainWindow::wyswietl()  {
 	tablica[22].setText(QString::number(s->wind.x));
 	tablica[23].setText(QString::number(s->wind.y));
 	tablica[24].setText(QString::number(s->wind.z));
-	tablica[25].setText(QString::number(s->temperature));
-	tablica[26].setText(QString::number(s->mass));
+	tablica[25].setText(QString::number(s->airTemperature));
+	tablica[26].setText(QString::number(s->temperature));
+	tablica[27].setText(QString::number(s->mass));
 
 }
 
@@ -145,8 +160,9 @@ void MainWindow::przeladujFun() {
 	s->alpha = tablica[18].toPlainText().toFloat();
 	s->gravity = glm::vec3(tablica[19].toPlainText().toFloat(), tablica[20].toPlainText().toFloat(), tablica[21].toPlainText().toFloat());
 	s->wind = glm::vec3(tablica[22].toPlainText().toFloat(), tablica[23].toPlainText().toFloat(), tablica[24].toPlainText().toFloat());
-	s->temperature = tablica[25].toPlainText().toFloat();
-	s->mass = tablica[26].toPlainText().toFloat();
+	s->airTemperature = tablica[25].toPlainText().toFloat();
+	s->temperature = tablica[26].toPlainText().toFloat();
+	s->mass = tablica[27].toPlainText().toFloat();
 	//wyswietl();
 }
 

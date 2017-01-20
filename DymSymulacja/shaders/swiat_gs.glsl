@@ -18,7 +18,7 @@ void main()
     {
         gl_Position = modelViewProjectionMatrix * inPosition[v] ;
         gl_ViewportIndex = 1;
-        outTexCoord = inTexCoord[v];
+        outTexCoord = 5*inTexCoord[v];
         EmitVertex();
     }
 

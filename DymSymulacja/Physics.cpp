@@ -4,9 +4,9 @@ using glm::vec3;
 
 
 
-const GLfloat Physics::constConv1 = 100;
-const GLfloat Physics::constConv2 = 100;
-const GLfloat Physics::constCooling = 1;
+const GLfloat Physics::constConv1  = 100;
+const GLfloat Physics::constConv2  = 100;
+const GLfloat Physics::constCooling = -1;
 
 vec3 Physics::position(vec3 position, GLfloat dTime, vec3 velocity) {
 	return position + (velocity * dTime);

@@ -193,12 +193,12 @@ System2::System2(Src *_s)
 	ERR
 	const char *fileNames[6] =
 	{
-		"textures/test22.png",	
-		"textures/test22.png",
-		"textures/test24.png",
-		"textures/test22.png",
-		"textures/test22.png",	
-		"textures/test24.png"
+		"textures/test222.png",	
+		"textures/test222.png",
+		"textures/test222.png",
+		"textures/test222.png",
+		"textures/test222.png",	
+		"textures/test222.png"
 	};
 	
 	// wczytanie tekstur

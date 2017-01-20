@@ -24,6 +24,7 @@ public:
 	glm::vec3 gravity = glm::vec3(0.0, -9.8, 0.0);
 	glm::vec3 wind;
 
+	GLfloat airTemperature = 30;
 	GLfloat temperature = 70.0;
 	GLfloat mass = 0.1;
 

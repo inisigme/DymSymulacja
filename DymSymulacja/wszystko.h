@@ -11,3 +11,4 @@
 #define ERR blad(__FILE__, __LINE__);
 
 void blad(std::string f, int l);
+void printFPS(double time);
