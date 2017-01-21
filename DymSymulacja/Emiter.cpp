@@ -72,7 +72,7 @@ void Emiter::update(GLfloat currentTime)
   {
 				Src *source = srcs[i];
 		
-				glm::vec3 force_convection_respawn = Physics::force_convection(source->temperature, source->airTemperature);
+				glm::vec3 velocity_convection_respawn = Physics::force_convection(source->temperature, source->airTemperature) / source->mass;
 
     glm::vec3 startPos = source->startPos;
     GLfloat range = source->range;
@@ -120,9 +120,9 @@ void Emiter::update(GLfloat currentTime)
 
       if (glm::distance(source->startPos, position) > maxH) // znika jesli zbyt daleko od zrodla
       {
-								*velo_x = force_convection_respawn.x + source->startVelocity.x + rand() / (float)RAND_MAX * source->startVelocityRange.x;
-								*velo_y = force_convection_respawn.y + source->startVelocity.y + rand() / (float)RAND_MAX * source->startVelocityRange.y;
-								*velo_z = force_convection_respawn.z + source->startVelocity.z + rand() / (float)RAND_MAX * source->startVelocityRange.z;
+								*velo_x = velocity_convection_respawn.x + source->startVelocity.x + rand() / (float)RAND_MAX * source->startVelocityRange.x;
+								*velo_y = velocity_convection_respawn.y + source->startVelocity.y + rand() / (float)RAND_MAX * source->startVelocityRange.y;
+								*velo_z = velocity_convection_respawn.z + source->startVelocity.z + rand() / (float)RAND_MAX * source->startVelocityRange.z;
 								*pos_x = (rand() / (float)RAND_MAX - 0.5f) * range + startPos.x;
 								*pos_y = (rand() / (float)RAND_MAX / 10) * 2 + startPos.y;
 								*pos_z = (rand() / (float)RAND_MAX - 0.5f) * range + startPos.z;
