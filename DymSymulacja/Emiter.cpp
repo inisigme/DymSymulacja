@@ -95,7 +95,7 @@ void Emiter::update(GLfloat currentTime)
 
 						GLfloat *temperature = &temperatures[j];
 
-						if (j == source->start + 1000) std::cout << "Particle temperature is:\t" << *temperature << std::endl;
+						// if (j == source->start + 1000) std::cout << "100th particle temperature is:\t" << *temperature << "\tvelocity: " << *velo_x << "\t" << *velo_y << "\t" << *velo_z << std::endl;
 
 
 						glm::vec3 force_convection = Physics::force_convection(*temperature, source->airTemperature);
