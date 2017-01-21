@@ -34,7 +34,7 @@ Emiter::Emiter(std::vector<Src *> srcs, unsigned int count, unsigned int sourceC
   this->temperatures = new GLfloat[count];
   this->sourcesCount = sourceCount;
   this->count = count;
-  for (int i = 0; i < sourceCount; i++)
+  for (unsigned int i = 0; i < sourceCount; i++)
   {
 				Src *source = srcs[i];
     glm::vec3 startPos = source->startPos;
@@ -68,7 +68,7 @@ void Emiter::update(GLfloat currentTime)
   static GLfloat lastTime = 0;
   GLfloat dTime = currentTime - lastTime;
   lastTime = glfwGetTime();
-  for (int i = 0; i < this->sourcesCount; i++)
+  for (unsigned int i = 0; i < this->sourcesCount; i++)
   {
 				Src *source = srcs[i];
 		
@@ -80,7 +80,7 @@ void Emiter::update(GLfloat currentTime)
     glm::vec3 wind = source->wind;
     glm::vec3 gravity = source->gravity;
 
-    for (int j = source->start; j < source->end; j++)
+    for (unsigned int j = source->start; j < source->end; j++)
     {
 
 						GLfloat *velo_x = &velocities[j * 3 + 0];
@@ -138,7 +138,7 @@ void Emiter::draw(glm::mat4x4 MVPMatrix, View *view, GLuint program, GLuint asd)
   ERR
       glEnable(GL_BLEND);
   glDisable(GL_DEPTH_TEST);
-  for (int i = 0; i < sourcesCount; i++)
+  for (unsigned int i = 0; i < sourcesCount; i++)
   {
 				Src *source = srcs[i];
 
