@@ -39,6 +39,7 @@ public:
 	int count;															// ilosc czastek
 	GLfloat *pos;												// [x,y,z,numer_tekstury,...]
 	GLfloat *velocities;
+	GLfloat *temperatures;
 	struct Src *sources;
 	unsigned int sourcesCount;
 	Emiter(std::vector<Src*>, unsigned int, unsigned int);

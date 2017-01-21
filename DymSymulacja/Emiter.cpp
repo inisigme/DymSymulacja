@@ -33,6 +33,7 @@ Emiter::Emiter(std::vector<Src *> srcs, unsigned int count, unsigned int sourceC
 	pos = new GLfloat[count * 4];
 	this->srcs = srcs;
 	this->velocities = new GLfloat[count * 3];
+	this->temperatures = new GLfloat[count];
 	this->sourcesCount = sourceCount;
 	this->count = count;
 	for (int i = 0; i < sourceCount; i++) {
@@ -47,6 +48,7 @@ Emiter::Emiter(std::vector<Src *> srcs, unsigned int count, unsigned int sourceC
 			pos[j * 4 + 1] = (rand() / (float)RAND_MAX) * maxH;
 			pos[j * 4 + 2] = (rand() / (float)RAND_MAX - 0.5f) * range + startPos.z / 100;
 			pos[j * 4 + 3] = (rand() / (float)RAND_MAX) * 6;
+			temperatures[j] = srcs[i]->temperature;
 		}
 	}
 }
@@ -64,7 +66,7 @@ void Emiter::update(GLfloat currentTime) {
 		glm::vec3 gravity = srcs[i]->gravity;
 		for (int j = srcs[i]->start; j < srcs[i]->end; j++) {
 
-			glm::vec3 force_convection = Physics::force_convection(srcs[i]->temperature*1.3, srcs[i]->temperature);
+			glm::vec3 force_convection = Physics::force_convection(temperatures[j], srcs[i]->airTemperature);
 
 			glm::vec3 force = Physics::force_gravitation(gravity, srcs[i]->mass) + force_convection + wind;
 
@@ -90,6 +92,7 @@ void Emiter::update(GLfloat currentTime) {
 				pos[j * 4 + 1] = (rand() / (float)RAND_MAX / 10) * 2 + startPos.y;
 				pos[j * 4 + 2] = (rand() / (float)RAND_MAX - 0.5f) * range + startPos.z;
 				pos[j * 4 + 3] = (rand() / (float)RAND_MAX) * 6;
+				temperatures[j] = srcs[i]->temperature;
 			}
 		}
 	}

@@ -22,7 +22,9 @@ vec3 Physics::force_gravitation(vec3 gravity, GLfloat mass) {
 	return gravity * mass;
 }
 vec3 Physics::force_convection(GLfloat temperature, GLfloat airtemperature) {
-	return vec3(0.0, Physics::constConv1 / airtemperature - Physics::constConv2 / temperature, 0.0);
+	return vec3(0.0,
+			Physics::constConv1 / (abs(airtemperature) < 1 ? 1 : airtemperature) - Physics::constConv2 / (abs(temperature) < 1 ? 1 : temperature),
+			0.0);
 }
 
 GLfloat Physics::temperature(GLfloat temperature, GLfloat dTime, GLfloat airTemperature) {
