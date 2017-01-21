@@ -22,9 +22,9 @@ public:
 
 	// Forces
 	glm::vec3 gravity = glm::vec3(0.0, -9.8, 0.0);
-	glm::vec3 wind;
+	glm::vec3 wind = glm::vec3(0.0,0.0,0.0);
 
-	GLfloat airTemperature = 30;
+	GLfloat airTemperature = 30.0;
 	GLfloat temperature = 70.0;
 	GLfloat mass = 0.1;
 
